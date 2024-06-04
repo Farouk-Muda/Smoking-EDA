@@ -10,6 +10,8 @@
 ---
 
 This project seeks to explores the health implications of smoking and various health parameters across different demographics. By analysing this data, we hope to establish trends, make key decisions based on the available data and gain in-depth understanding of the data.
+![countplot](https://github.com/Farouk-Muda/Smoking/assets/166823237/ca46ef7b-bb47-49d8-81e2-502b14f30ffa)
+
 
 ### Data Source
 
