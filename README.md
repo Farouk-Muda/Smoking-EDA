@@ -15,7 +15,7 @@ This project seeks to explores the health implications of smoking and various he
 
 ### Data Source
 
-Sales Data: The primary dataset used for this analysis is "smoking_health_data.csv" file, obtained from kaggle which gives detailed description of each column and its relevance to the study.
+The primary dataset used for this analysis is "smoking_health_data.csv" file, obtained from kaggle which gives detailed description of each column and its relevance to the study.
 
 ### Data Cleaning/Preparation
 
