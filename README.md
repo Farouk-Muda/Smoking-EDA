@@ -45,10 +45,18 @@ This decision ensured a consistent dataset for analysis while avoiding errors in
 ### Exploratory Data Analysis
 
 This focuses on drawing useful insights from the data and making the findings appealing for targeted public health interventions to reduce smoking rates and mitigate its adverse health effects
-- 1. The dataset is grouped by the Gender column. Within each gender, the Smoking Status values are analyzed.
+-  The dataset is grouped by the Gender column. Within each gender, the Smoking Status values are analyzed.
 This creates groups for "female" and "male," where the number of occurrences of each smoking status (e.g., smoker, non-smoker) is counted.
 ``` df.groupby('Gender')['Smoking Status'].value_counts().reset_index(name='Total') ```
--2. 
+
+-  I split the blood pressure values (e.g., "137/88") into two parts at the "/" using  ``` str.split('/') ```.  This adds two new columns, Systolic and Diastolic, to the dataset. The categorize_BP function uses standard clinical guidelines to assign each individual to a blood pressure category based on their systolic and diastolic values.
+Categories include:
+Normal: Systolic < 120 and Diastolic < 80
+Elevated: Systolic between 120–129 and Diastolic < 80
+Hypertension Stage 1: Systolic 130–139 or Diastolic 80–89
+Hypertension Stage 2: Systolic ≥ 140 or Diastolic ≥ 90
+Hypertensive Crisis: Systolic > 180 or Diastolic > 120
+Applies the function row-wise using ``` .apply``` and adds a new column, BP Category, to indicate the result.
 
 
 ### Results/Findings
