@@ -17,19 +17,38 @@ This project seeks to explores the health implications of smoking and various he
 
 The primary dataset used for this analysis is "smoking_health_data.csv" file, obtained from kaggle which gives detailed description of each column and its relevance to the study.
 
+### Dataset Overview
+Shape: The dataset contains **3900 rows** and **7 columns**.
+- age: Age of participants.
+- sex: Gender (male/female).
+- current_smoker: Whether the participant currently smokes (yes/no).
+- heart_rate: Heart rate of participants.
+- blood_pressure: Blood pressure in mmHg.
+- cigs_per_day: Number of cigarettes smoked per day.
+- chol: Cholesterol level.
+
+### Tool
+Python - pandas, matplotlib & seaborn
+
 ### Data Cleaning/Preparation
 
 In the initial data preparation phase, we performed the following tasks:
-1. Data loading and inspection.
-2. Handling missing values.
-3. Data cleaning and formatting.
+1. Data loading - The dataset was loaded and reviewed to understand its structure and identify potential issues.
+2. Handling missing values - A check for missing values revealed null entries in the Cigs Per Day (14 missing) and Cholesterol (7 missing) columns. To address this:
+All missing values were replaced with zeros using df.fillna(0).
+This decision ensured a consistent dataset for analysis while avoiding errors in computations caused by missing data.
+3. Data cleaning and formatting
+- It was observed that values needed to be split into separate systolic and diastolic components for meaningful analysis.
+- Column names were renamed to improve readability.
+- Ensuring all categorical columns (Gender and Smoking Status) had consistent values.
 
 ### Exploratory Data Analysis
 
-This focuses on drawing useful insights from the data and making the findings appealing for targeted public health interventions to reduce smoking rates and mitigate its adverse health effects. It includes;
-1. Differences in sex of an individual can affect smoking pattern.
-2. Age of the individual and it's influence on smoking habits.
-3. Correlation of smoking on health parameters such as heart rate, blood pressure, and cholesterol levels.
+This focuses on drawing useful insights from the data and making the findings appealing for targeted public health interventions to reduce smoking rates and mitigate its adverse health effects
+- 1. The dataset is grouped by the Gender column. Within each gender, the Smoking Status values are analyzed.
+This creates groups for "female" and "male," where the number of occurrences of each smoking status (e.g., smoker, non-smoker) is counted.
+``` df.groupby('Gender')['Smoking Status'].value_counts().reset_index(name='Total') ```
+-2. 
 
 
 ### Results/Findings
@@ -52,19 +71,4 @@ Following the analysis of the data to establish the relationship between smoking
 
 I had to fill up all null values with zeros, as opposed to removing them because it would have greatly affected the precise details of my analysis
 
-### References
 
-1. [Stack Overflow](https://stack.com)
-2. 
-
-
-🖥️
-
-🥰
-
-|Heading1|Heading2|
-|--------|--------|
-|Content|Content2|
-|Python|SQL|
-
-`column_1`
